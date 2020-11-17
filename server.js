@@ -19,7 +19,7 @@ app.post('/convert', upload.single("file"), (req, res) => {
     src.on('end', function() {
     	fs.unlinkSync(req.file.path);        
         //sending file as a response
-        var filePath = path.join(__dirname, 'uploads/' + req.file.originalname);//file.pdf to emulate convert
+        var filePath = path.join(__dirname, 'uploads/' + req.file.originalname);
         var stat = fs.statSync(filePath);
     
         res.writeHead(200, {
